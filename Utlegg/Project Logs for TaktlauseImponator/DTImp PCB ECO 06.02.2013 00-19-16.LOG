@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=C1 Pin=Q0-1
+Removed Pin From Net: NetName=C0 Pin=Q1-1
+Added Pin To Net: NetName=C0 Pin=Q0-1
+Added Pin To Net: NetName=C1 Pin=Q1-1
+Added Member To Class: ClassName=DTImp Member=Component D5 RGB-LED Through Hole

@@ -1,0 +1,554 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 { 
+			font-family : sans-serif;
+			color : white;
+			background-color : #21489e;
+			padding: 0.3em;
+		}
+		body { 
+			font-family : verdana;
+		}
+		td, th {  
+			padding: 0.5em;
+			text-align : center;
+			width : 18%;	
+		}
+		th { 
+			background-color : #A6CAF0;
+		
+		}
+		th.column1, td.column1 { 
+			text-align: left;
+			width : auto; 
+		}
+		table { 
+			width : 100%; 
+		}
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3 {
+			padding-top : 0.1em;
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width : auto;
+			vertical-align: top
+		}
+		.front_matter_column1 {
+			text-align : right;
+		}
+		.total_column1, .total_column {
+			font-weight : bold;	
+		}
+		.total_column1 {
+			text-align : right;
+		}
+		.front_matter_column2 {
+			text-align : center;
+		}
+		.front_matter_column3 {
+			text-align : left;
+		}
+		.warning, .error { 
+			color : red;
+			font-weight : bold;
+		}	
+		tr.onmouseout_odd { 
+			background-color : #EEEEE0 
+		}
+		tr.onmouseout_even { 
+			background-color : #F3F3E3   
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : lightYellow 
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #008000 
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+			
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);		
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {	
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}	
+	</script><title>Footprint Comparison Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD 10\Templates\AD-rgb_logo_223x64.gif
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Footprint Comparison Report</h1>
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">05.02.2013</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">23:50:12</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3"><a href="file:///C:\Users\%C3%98ystein\Documents\TaktlauseImponator\Utlegg\DTImp.PcbDoc" class="file"><acronym title="C:\Users\Øystein\Documents\TaktlauseImponator\Utlegg\DTImp.PcbDoc">C:\Users\Øystein\Documents\TaktlauseImponator\Utlegg\DTImp.PcbDoc</acronym></a></td>
+</tr>
+</table>
+<hr><a name="IDASA0TD"><h2>Contents</h2></a><p class="contents_level1"><a href="#IDASA0TD">Contents</a></p>
+<p class="contents_level1"><a href="#IDAWA0TD">Components Status Summary</a></p>
+<p class="contents_level2"><a href="#IDAZA0TD">Unmatched Components List<br></a></p>
+<p class="contents_level2"><a href="#IDAJH0TD">Matched Components List<br></a></p>
+<p class="contents_level1"><a href="#IDA510TD">Components Details</a></p>
+<p class="contents_level2"><a href="#IDAC20TD">PCB Difference Details<br></a></p><br><hr><a name="IDAWA0TD"><h2>Components Status Summary</h2></a><h2>Unmatched Components List</h2><a name="IDAZA0TD"><table>
+<tr>
+<th class="column1">Designator</th>
+<th class="column2">Footprint</th>
+<th class="column3">Footprint reference</th>
+<th class="column4">Path to reference Library</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">D0</td>
+<td style="Width:20%" class="column2">RGB-LED Through Hole</td>
+<td style="Width:20%" class="column3">RGB-LED Through Hole</td>
+<td style="Width:60%" class="column4">C:\Users\Øystein\Documents\TaktlauseImponator\Utlegg\Library\oystesm.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">D1</td>
+<td style="Width:20%" class="column2">RGB-LED Through Hole</td>
+<td style="Width:20%" class="column3">RGB-LED Through Hole</td>
+<td style="Width:60%" class="column4">C:\Users\Øystein\Documents\TaktlauseImponator\Utlegg\Library\oystesm.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">D2</td>
+<td style="Width:20%" class="column2">RGB-LED Through Hole</td>
+<td style="Width:20%" class="column3">RGB-LED Through Hole</td>
+<td style="Width:60%" class="column4">C:\Users\Øystein\Documents\TaktlauseImponator\Utlegg\Library\oystesm.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">D3</td>
+<td style="Width:20%" class="column2">RGB-LED Through Hole</td>
+<td style="Width:20%" class="column3">RGB-LED Through Hole</td>
+<td style="Width:60%" class="column4">C:\Users\Øystein\Documents\TaktlauseImponator\Utlegg\Library\oystesm.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">D4</td>
+<td style="Width:20%" class="column2">RGB-LED Through Hole</td>
+<td style="Width:20%" class="column3">RGB-LED Through Hole</td>
+<td style="Width:60%" class="column4">C:\Users\Øystein\Documents\TaktlauseImponator\Utlegg\Library\oystesm.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">D5</td>
+<td style="Width:20%" class="column2">RGB-LED Through Hole</td>
+<td style="Width:20%" class="column3">RGB-LED Through Hole</td>
+<td style="Width:60%" class="column4">C:\Users\Øystein\Documents\TaktlauseImponator\Utlegg\Library\oystesm.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">D6</td>
+<td style="Width:20%" class="column2">RGB-LED Through Hole</td>
+<td style="Width:20%" class="column3">RGB-LED Through Hole</td>
+<td style="Width:60%" class="column4">C:\Users\Øystein\Documents\TaktlauseImponator\Utlegg\Library\oystesm.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">D7</td>
+<td style="Width:20%" class="column2">RGB-LED Through Hole</td>
+<td style="Width:20%" class="column3">RGB-LED Through Hole</td>
+<td style="Width:60%" class="column4">C:\Users\Øystein\Documents\TaktlauseImponator\Utlegg\Library\oystesm.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">D8</td>
+<td style="Width:20%" class="column2">RGB-LED Through Hole</td>
+<td style="Width:20%" class="column3">RGB-LED Through Hole</td>
+<td style="Width:60%" class="column4">C:\Users\Øystein\Documents\TaktlauseImponator\Utlegg\Library\oystesm.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">D9</td>
+<td style="Width:20%" class="column2">RGB-LED Through Hole</td>
+<td style="Width:20%" class="column3">RGB-LED Through Hole</td>
+<td style="Width:60%" class="column4">C:\Users\Øystein\Documents\TaktlauseImponator\Utlegg\Library\oystesm.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">D10</td>
+<td style="Width:20%" class="column2">RGB-LED Through Hole</td>
+<td style="Width:20%" class="column3">RGB-LED Through Hole</td>
+<td style="Width:60%" class="column4">C:\Users\Øystein\Documents\TaktlauseImponator\Utlegg\Library\oystesm.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">D11</td>
+<td style="Width:20%" class="column2">RGB-LED Through Hole</td>
+<td style="Width:20%" class="column3">RGB-LED Through Hole</td>
+<td style="Width:60%" class="column4">C:\Users\Øystein\Documents\TaktlauseImponator\Utlegg\Library\oystesm.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">D12</td>
+<td style="Width:20%" class="column2">RGB-LED Through Hole</td>
+<td style="Width:20%" class="column3">RGB-LED Through Hole</td>
+<td style="Width:60%" class="column4">C:\Users\Øystein\Documents\TaktlauseImponator\Utlegg\Library\oystesm.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">D13</td>
+<td style="Width:20%" class="column2">RGB-LED Through Hole</td>
+<td style="Width:20%" class="column3">RGB-LED Through Hole</td>
+<td style="Width:60%" class="column4">C:\Users\Øystein\Documents\TaktlauseImponator\Utlegg\Library\oystesm.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">D14</td>
+<td style="Width:20%" class="column2">RGB-LED Through Hole</td>
+<td style="Width:20%" class="column3">RGB-LED Through Hole</td>
+<td style="Width:60%" class="column4">C:\Users\Øystein\Documents\TaktlauseImponator\Utlegg\Library\oystesm.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">D15</td>
+<td style="Width:20%" class="column2">RGB-LED Through Hole</td>
+<td style="Width:20%" class="column3">RGB-LED Through Hole</td>
+<td style="Width:60%" class="column4">C:\Users\Øystein\Documents\TaktlauseImponator\Utlegg\Library\oystesm.PcbLib</td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><h2>Matched Components List</h2><a name="IDAJH0TD"><table>
+<tr>
+<th class="column1">Designator</th>
+<th class="column2">Footprint</th>
+<th class="column3">Footprint reference</th>
+<th class="column4">Footprint to reference Library</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C1</td>
+<td style="Width:20%" class="column2">C1206</td>
+<td style="Width:20%" class="column3">C1206</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Miscellaneous Devices.IntLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C2</td>
+<td style="Width:20%" class="column2">C1206</td>
+<td style="Width:20%" class="column3">C1206</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Miscellaneous Devices.IntLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C3</td>
+<td style="Width:20%" class="column2">C1206</td>
+<td style="Width:20%" class="column3">C1206</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Miscellaneous Devices.IntLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Q0</td>
+<td style="Width:20%" class="column2">SOT23_N</td>
+<td style="Width:20%" class="column3">SOT23_N</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Philips\Philips Discrete MOSFET - Low Power.IntLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Q1</td>
+<td style="Width:20%" class="column2">SOT23_N</td>
+<td style="Width:20%" class="column3">SOT23_N</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Philips\Philips Discrete MOSFET - Low Power.IntLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R1</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R2</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R3</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R4</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R5</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R6</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R7</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R8</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R9</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R10</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R11</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R12</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R13</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R14</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R15</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R16</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R17</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R18</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R19</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R20</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R21</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R22</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R23</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R24</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R25</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R26</td>
+<td style="Width:20%" class="column2">ERA-0805</td>
+<td style="Width:20%" class="column3">ERA-0805</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Panasonic\Panasonic Resistor.IntLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">U1</td>
+<td style="Width:20%" class="column2">64A_N</td>
+<td style="Width:20%" class="column3">64A_N</td>
+<td style="Width:60%" class="column4">C:\Users\Public\Documents\Altium\AD 10\Library\Atmel\Atmel Microcontroller 8-Bit AVR.IntLib</td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><hr><a name="IDA510TD"><h2>Components Details</h2></a><h2>PCB Difference Details</h2><a name="IDAC20TD"><table>
+<tr>
+<th class="column1">Designator</th>
+<th class="column2">Layers Containing Differences</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="Width:2%" class="column1">D0</td>
+<td class="column2">Top Layer, Bottom Layer, Top Solder, Bottom Solder</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="Width:2%" class="column1">D1</td>
+<td class="column2">Top Layer, Bottom Layer, Top Solder, Bottom Solder</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="Width:2%" class="column1">D2</td>
+<td class="column2">Top Layer, Bottom Layer, Top Solder, Bottom Solder</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="Width:2%" class="column1">D3</td>
+<td class="column2">Top Layer, Bottom Layer, Top Solder, Bottom Solder</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="Width:2%" class="column1">D4</td>
+<td class="column2">Top Layer, Bottom Layer, Top Solder, Bottom Solder</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="Width:2%" class="column1">D5</td>
+<td class="column2">Top Layer, Bottom Layer, Top Solder, Bottom Solder</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="Width:2%" class="column1">D6</td>
+<td class="column2">Top Layer, Bottom Layer, Top Solder, Bottom Solder</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="Width:2%" class="column1">D7</td>
+<td class="column2">Top Layer, Bottom Layer, Top Solder, Bottom Solder</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="Width:2%" class="column1">D8</td>
+<td class="column2">Top Layer, Bottom Layer, Top Solder, Bottom Solder</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="Width:2%" class="column1">D9</td>
+<td class="column2">Top Layer, Bottom Layer, Top Solder, Bottom Solder</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="Width:2%" class="column1">D10</td>
+<td class="column2">Top Layer, Bottom Layer, Top Solder, Bottom Solder</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="Width:2%" class="column1">D11</td>
+<td class="column2">Top Layer, Bottom Layer, Top Solder, Bottom Solder</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="Width:2%" class="column1">D12</td>
+<td class="column2">Top Layer, Bottom Layer, Top Solder, Bottom Solder</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="Width:2%" class="column1">D13</td>
+<td class="column2">Top Layer, Bottom Layer, Top Solder, Bottom Solder</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="Width:2%" class="column1">D14</td>
+<td class="column2">Top Layer, Bottom Layer, Top Solder, Bottom Solder</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="Width:2%" class="column1">D15</td>
+<td class="column2">Top Layer, Bottom Layer, Top Solder, Bottom Solder</td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><hr>
+</body>
+</html>

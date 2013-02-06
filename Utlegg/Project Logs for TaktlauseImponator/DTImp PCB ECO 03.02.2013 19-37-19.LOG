@@ -1,0 +1,32 @@
+Added Component: Designator=D0(RGB-LED Through Hole)
+Added Component: Designator=D1(RGB-LED Through Hole)
+Added Component: Designator=D2(RGB-LED Through Hole)
+Added Component: Designator=D3(RGB-LED Through Hole)
+Added Component: Designator=D4(RGB-LED Through Hole)
+Added Component: Designator=D5(RGB-LED Through Hole)
+Added Component: Designator=D6(RGB-LED Through Hole)
+Added Component: Designator=D7(RGB-LED Through Hole)
+Added Component: Designator=D8(RGB-LED Through Hole)
+Added Component: Designator=D9(RGB-LED Through Hole)
+Added Component: Designator=D10(RGB-LED Through Hole)
+Added Component: Designator=D11(RGB-LED Through Hole)
+Added Component: Designator=D12(RGB-LED Through Hole)
+Added Component: Designator=D13(RGB-LED Through Hole)
+Added Component: Designator=D14(RGB-LED Through Hole)
+Added Component: Designator=D15(RGB-LED Through Hole)
+Added Member To Class: ClassName=DTImp Member=Component D0 RGB-LED Through Hole
+Added Member To Class: ClassName=DTImp Member=Component D1 RGB-LED Through Hole
+Added Member To Class: ClassName=DTImp Member=Component D2 RGB-LED Through Hole
+Added Member To Class: ClassName=DTImp Member=Component D3 RGB-LED Through Hole
+Added Member To Class: ClassName=DTImp Member=Component D4 RGB-LED Through Hole
+Added Member To Class: ClassName=DTImp Member=Component D5 RGB-LED Through Hole
+Added Member To Class: ClassName=DTImp Member=Component D6 RGB-LED Through Hole
+Added Member To Class: ClassName=DTImp Member=Component D7 RGB-LED Through Hole
+Added Member To Class: ClassName=DTImp Member=Component D8 RGB-LED Through Hole
+Added Member To Class: ClassName=DTImp Member=Component D9 RGB-LED Through Hole
+Added Member To Class: ClassName=DTImp Member=Component D10 RGB-LED Through Hole
+Added Member To Class: ClassName=DTImp Member=Component D11 RGB-LED Through Hole
+Added Member To Class: ClassName=DTImp Member=Component D12 RGB-LED Through Hole
+Added Member To Class: ClassName=DTImp Member=Component D13 RGB-LED Through Hole
+Added Member To Class: ClassName=DTImp Member=Component D14 RGB-LED Through Hole
+Added Member To Class: ClassName=DTImp Member=Component D15 RGB-LED Through Hole

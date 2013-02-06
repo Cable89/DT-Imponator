@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=NetD8_2 Pin=Q?-3
+Change Component Designator: OldDesignator=Q? NewDesignator=Q0
+Change Component Designator: OldDesignator=Q? NewDesignator=Q1
+Added Pin To Net: NetName=NetD0_2 Pin=Q0-3
+Added Pin To Net: NetName=GND Pin=Q1-2
+Added Pin To Net: NetName=NetD8_2 Pin=Q1-3
+Change Net Name : Old Net Name=C1 New Net Name=C0
+Added Pin To Net: NetName=C1 Pin=Q1-1
+Added Net: Name=C1
+Added Member To Class: ClassName=DTImp Member=Component Q0 2N7002
+Added Room: Name=DTImp
