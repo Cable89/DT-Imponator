@@ -3,23 +3,23 @@ DTImp.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000004  00800100  00000462  000004f6  2**0
+  0 .data         00000004  00800100  0000047e  00000512  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00000462  00000000  00000000  00000094  2**1
+  1 .text         0000047e  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          00000035  00800104  00800104  000004fa  2**0
+  2 .bss          00000035  00800104  00800104  00000516  2**0
                   ALLOC
-  3 .stab         000006cc  00000000  00000000  000004fc  2**2
+  3 .stab         000006cc  00000000  00000000  00000518  2**2
                   CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      00000085  00000000  00000000  00000bc8  2**0
+  4 .stabstr      00000085  00000000  00000000  00000be4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_aranges 00000060  00000000  00000000  00000c50  2**3
+  5 .debug_aranges 00000060  00000000  00000000  00000c70  2**3
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   0000029a  00000000  00000000  00000cb0  2**0
+  6 .debug_info   0000029a  00000000  00000000  00000cd0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 0000003c  00000000  00000000  00000f4a  2**0
+  7 .debug_abbrev 0000003c  00000000  00000000  00000f6a  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   000001ac  00000000  00000000  00000f86  2**0
+  8 .debug_line   000001ac  00000000  00000000  00000fa6  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -73,7 +73,7 @@ Disassembly of section .text:
   98:	11 e0       	ldi	r17, 0x01	; 1
   9a:	a0 e0       	ldi	r26, 0x00	; 0
   9c:	b1 e0       	ldi	r27, 0x01	; 1
-  9e:	e2 e6       	ldi	r30, 0x62	; 98
+  9e:	ee e7       	ldi	r30, 0x7E	; 126
   a0:	f4 e0       	ldi	r31, 0x04	; 4
   a2:	00 e0       	ldi	r16, 0x00	; 0
   a4:	0b bf       	out	0x3b, r16	; 59
@@ -99,7 +99,7 @@ Disassembly of section .text:
   c0:	b1 07       	cpc	r27, r17
   c2:	e1 f7       	brne	.-8      	; 0xbc <.do_clear_bss_loop>
   c4:	0e 94 01 02 	call	0x402	; 0x402 <main>
-  c8:	0c 94 2f 02 	jmp	0x45e	; 0x45e <_exit>
+  c8:	0c 94 3d 02 	jmp	0x47a	; 0x47a <_exit>
 
 000000cc <__bad_interrupt>:
   cc:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -426,7 +426,7 @@ Disassembly of section .text:
  402:	0e 94 96 00 	call	0x12c	; 0x12c <init>
  406:	78 94       	sei
  408:	0e 94 7c 00 	call	0xf8	; 0xf8 <clear>
- 40c:	8f ef       	ldi	r24, 0xFF	; 255
+ 40c:	86 e9       	ldi	r24, 0x96	; 150
  40e:	90 e0       	ldi	r25, 0x00	; 0
  410:	60 e0       	ldi	r22, 0x00	; 0
  412:	70 e0       	ldi	r23, 0x00	; 0
@@ -439,7 +439,7 @@ Disassembly of section .text:
  424:	0e 94 7c 00 	call	0xf8	; 0xf8 <clear>
  428:	80 e0       	ldi	r24, 0x00	; 0
  42a:	90 e0       	ldi	r25, 0x00	; 0
- 42c:	6f ef       	ldi	r22, 0xFF	; 255
+ 42c:	66 e9       	ldi	r22, 0x96	; 150
  42e:	70 e0       	ldi	r23, 0x00	; 0
  430:	40 e0       	ldi	r20, 0x00	; 0
  432:	50 e0       	ldi	r21, 0x00	; 0
@@ -452,16 +452,27 @@ Disassembly of section .text:
  446:	90 e0       	ldi	r25, 0x00	; 0
  448:	60 e0       	ldi	r22, 0x00	; 0
  44a:	70 e0       	ldi	r23, 0x00	; 0
- 44c:	4f ef       	ldi	r20, 0xFF	; 255
+ 44c:	46 e9       	ldi	r20, 0x96	; 150
  44e:	50 e0       	ldi	r21, 0x00	; 0
  450:	0e 94 68 00 	call	0xd0	; 0xd0 <draw_color>
  454:	88 ee       	ldi	r24, 0xE8	; 232
  456:	93 e0       	ldi	r25, 0x03	; 3
  458:	0e 94 87 00 	call	0x10e	; 0x10e <delay_ms>
- 45c:	d5 cf       	rjmp	.-86     	; 0x408 <main+0x6>
+ 45c:	0e 94 7c 00 	call	0xf8	; 0xf8 <clear>
+ 460:	80 e5       	ldi	r24, 0x50	; 80
+ 462:	90 e0       	ldi	r25, 0x00	; 0
+ 464:	64 e6       	ldi	r22, 0x64	; 100
+ 466:	70 e0       	ldi	r23, 0x00	; 0
+ 468:	40 e0       	ldi	r20, 0x00	; 0
+ 46a:	50 e0       	ldi	r21, 0x00	; 0
+ 46c:	0e 94 68 00 	call	0xd0	; 0xd0 <draw_color>
+ 470:	88 ee       	ldi	r24, 0xE8	; 232
+ 472:	93 e0       	ldi	r25, 0x03	; 3
+ 474:	0e 94 87 00 	call	0x10e	; 0x10e <delay_ms>
+ 478:	c7 cf       	rjmp	.-114    	; 0x408 <main+0x6>
 
-0000045e <_exit>:
- 45e:	f8 94       	cli
+0000047a <_exit>:
+ 47a:	f8 94       	cli
 
-00000460 <__stop_program>:
- 460:	ff cf       	rjmp	.-2      	; 0x460 <__stop_program>
+0000047c <__stop_program>:
+ 47c:	ff cf       	rjmp	.-2      	; 0x47c <__stop_program>

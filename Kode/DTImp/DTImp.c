@@ -28,13 +28,16 @@ int main(void){
 	sei();
 	clear();
     while(1){
-        draw_color(255,0,0);
+        draw_color(150,0,0);
 		delay_ms(1000);
 		clear();
-		draw_color(0,255,0);
+		draw_color(0,150,0);
 		delay_ms(1000);
 		clear();
-		draw_color(0,0,255);
+		draw_color(0,0,150);
+		delay_ms(1000);
+		clear();
+		draw_color(80,100,0);
 		delay_ms(1000);
 		clear();
     }
