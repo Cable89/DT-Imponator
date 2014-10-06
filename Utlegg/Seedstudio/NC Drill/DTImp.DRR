@@ -1,0 +1,15 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: DTImp.PcbDoc   27.10.2013  14:39:52
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : DTImp.TXT
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        13.78mil (0.35001mm)     Round          10               3.07 Inch (78.00 mm)
+T2        35.43mil (0.89992mm)     Round          64               6.12 Inch (155.53 mm)
+---------------------------------------------------------------------------
+Totals                                            74               9.19 Inch (233.53 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:00
